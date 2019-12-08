@@ -17,6 +17,8 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 exclude=kube*
 EOF
 
+sudo yum update
+
 # Turn off the swap: Required for Kubernetes to work
 sudo swapoff -a
  
@@ -27,4 +29,4 @@ sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes docker-
 sudo systemctl enable --now docker
  
 # Start Kubernetes
-systemctl enable --now kubelet
+sudo systemctl enable --now kubelet
