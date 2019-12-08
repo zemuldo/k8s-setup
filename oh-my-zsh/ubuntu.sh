@@ -1,10 +1,10 @@
 echo "Updating packages"
 sudo apt-get update
 
-sudo apt upgrade
+sudo apt upgrade -y
 
 echo "Installing dependancies"
-sudo apt install zsh git
+sudo apt install zsh git -y
 
 sudo apt-get install powerline fonts-powerline
 
@@ -14,7 +14,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 echo "Change Ohmy-ZSH theme to gnzh"
-sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gnzh"/g'
+sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gnzh"/g' ~/.zshrc
 
 chsh -s /bin/zsh
 
