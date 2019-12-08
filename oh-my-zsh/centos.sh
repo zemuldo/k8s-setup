@@ -6,7 +6,10 @@ sudo yum upgrade
 echo "Installing dependancies"
 sudo yum install zsh git
 
-sudo yum install powerline fonts-powerline
+echo "Setting up powerline fonts"
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts ./install.sh
+mkdir /usr/share/fonts cp /root/.local/share/fonts/* /usr/share/fonts
 
 echo "Cloning oh-my-zsh"
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -19,10 +22,7 @@ sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gnzh"/g'
 chsh -s /bin/zsh
 
 echo "Syntax Highlighting for Oh My Zsh"
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts ./install.sh
-mkdir /usr/share/fonts cp /root/.local/share/fonts/* /usr/share/fonts
-cd
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh-syntax-highlighting" --depth 1
 
 echo "Activating syntax highligthter"
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
