@@ -6,7 +6,7 @@ sudo apt upgrade -y
 echo "Installing dependancies"
 sudo apt install zsh git -y
 
-sudo apt-get install powerline fonts-powerline
+sudo apt-get install powerline fonts-powerline -y
 
 echo "Cloning oh-my-zsh"
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh

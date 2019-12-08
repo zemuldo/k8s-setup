@@ -4,7 +4,7 @@ sudo yum update
 sudo yum upgrade
 
 echo "Installing dependancies"
-sudo yum install zsh git
+sudo yum install zsh git util-linux-user
 
 echo "Setting up powerline fonts"
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -17,7 +17,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 
 echo "Change Ohmy-ZSH theme to gnzh"
-sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gnzh"/g'
+sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="gnzh"/g' ~/.zshrc
 
 chsh -s /bin/zsh
 
