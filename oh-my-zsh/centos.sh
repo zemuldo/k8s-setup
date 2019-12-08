@@ -1,10 +1,10 @@
 echo "Updating packages"
 sudo yum update
 
-sudo yum upgrade
+sudo yum -y upgrade
 
 echo "Installing dependancies"
-sudo yum install zsh git util-linux-user
+sudo yum -y install zsh git util-linux-user
 
 echo "Setting up powerline fonts"
 git clone https://github.com/powerline/fonts.git --depth=1
