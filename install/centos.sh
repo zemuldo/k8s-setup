@@ -20,7 +20,7 @@ dnf list docker-ce --showduplicates | sort -r
 
 sudo dnf install -y docker-ce-3:18.09.1-3.el7
  
-sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes docker-ce docker-ce-cli containerd.io
+sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes 
  
 sudo systemctl enable --now docker
  
