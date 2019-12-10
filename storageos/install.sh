@@ -9,5 +9,3 @@ ClusterIP=$(kubectl get svc/storageos --namespace storageos -o custom-columns=IP
 kubectl create -f storageos/storageclass.yml
 
 kubectl patch storageclass fast -p '{"metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-
-kubectl --namespace storageos port-forward svc/storageos 5705

@@ -1,0 +1,1 @@
+kubectl --namespace storageos port-forward svc/storageos 5705

@@ -1,0 +1,1 @@
+kubectl proxy --accept-hosts='^*$'
