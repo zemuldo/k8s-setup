@@ -8,5 +8,3 @@ http://localhost:8000/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 ## Storageos Dashboard
 
 http://localhost:5700/#/volumes
-
-
