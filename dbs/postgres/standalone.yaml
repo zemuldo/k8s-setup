@@ -29,6 +29,7 @@ spec:
       containers:
         - name: postgres
           image: postgres:10.4
+          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432
