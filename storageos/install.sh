@@ -1,11 +1,7 @@
-helm repo add storageos https://charts.storageos.com
+kubectl create -f https://github.com/storageos/cluster-operator/releases/download/1.5.1/storageos-operator.yaml
 
-helm repo update
+kubectl create -f storageos-operator-secret.yaml
 
-helm install storageos/storageos --namespace storageos --generate-name --set cluster.join="z-server-2\,z-server-3\,z-server-4"
+kubectl create -f storageos-oparator-cluster.yaml
 
-ClusterIP=$(kubectl get svc/storageos --namespace storageos -o custom-columns=IP:spec.clusterIP --no-headers=true)\nApiAddress=$(echo -n "tcp://$ClusterIP:5705" | base64)\nkubectl patch secret/storageos-api --namespace storageos --patch "{\"data\": {\"apiAddress\": \"$ApiAddress\"}}"
-
-kubectl create -f storageos/storageclass.yml
-
-kubectl patch storageclass fast -p '{"metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+kubectl create -f storageclass.yaml
