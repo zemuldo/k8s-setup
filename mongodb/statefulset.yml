@@ -36,7 +36,7 @@ spec:
       containers:
         - name: mongo
           image: mongo
-          command: ["/bin/sh","-c"]
+          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
           args: ["echo 2J2W5Jm7G38y169r8s5T1dW > mongo.key; chmod 600 mongo.key; mongod --replSet zemuldo --keyFile mongo.key --smallfiles --noprealloc --bind_ip_all"]
           ports:
             - containerPort: 27017
