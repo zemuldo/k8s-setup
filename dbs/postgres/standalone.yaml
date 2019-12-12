@@ -10,12 +10,17 @@ data:
   POSTGRES_PASSWORD: test123
 
 ---
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres
+  labels:
+    app: postgres
 spec:
-  replicas: 1
+  replicas: 3
+  selector:
+    matchLabels:
+      app: postgres
   template:
     metadata:
       labels:
