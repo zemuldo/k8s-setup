@@ -37,25 +37,24 @@ spec:
         - name: mongo
           image: mongo
           command:
-           - mongod
-           - "--replSet"
-           - zemuldo
-           - "--smallfiles"
-           - "--noprealloc"
+          - mongod
+          args:
+            - "--replSet=rs0"
+            - "--bind_ip=0.0.0.0"
           ports:
             - containerPort: 27017
           volumeMounts:
             - mountPath: /data/db
               name: persistent-storage
-      volumeClaimTemplates:
-      - metadata:
-          name: persistent-storage
-        spec:
-          accessModes: [ "ReadWriteOnce" ]
-          storageClassName: "fast"
-          resources:
-            requests:
-              storage: 5Gi
+  volumeClaimTemplates:
+  - metadata:
+      name: persistent-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "fast"
+      resources:
+        requests:
+          storage: 5Gi
 ---
 
 
