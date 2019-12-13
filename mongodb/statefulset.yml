@@ -36,17 +36,26 @@ spec:
       containers:
         - name: mongo
           image: mongo
-          command: [ "/bin/bash", "-ce", "tail -f /dev/null" ]
-          args: ["echo 2J2W5Jm7G38y169r8s5T1dW > mongo.key; chmod 600 mongo.key; mongod --replSet zemuldo --keyFile mongo.key --smallfiles --noprealloc --bind_ip_all"]
+          command:
+           - mongod
+           - "--replSet"
+           - zemuldo
+           - "--smallfiles"
+           - "--noprealloc"
           ports:
             - containerPort: 27017
           volumeMounts:
             - mountPath: /data/db
               name: persistent-storage
-      volumes:
-        - name: persistent-storage
-          persistentVolumeClaim:
-            claimName: mongo-pvc
+      volumeClaimTemplates:
+      - metadata:
+          name: persistent-storage
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: "fast"
+          resources:
+            requests:
+              storage: 5Gi
 ---
 
 
