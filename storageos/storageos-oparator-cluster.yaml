@@ -1,7 +1,7 @@
 apiVersion: "storageos.com/v1"
 kind: StorageOSCluster
 metadata:
-  name: "example-storageos"
+  name: "z-storageos"
   namespace: "storageos-operator"
 spec:
   secretRefName: "storageos-api" # Reference the Secret created in the previous step

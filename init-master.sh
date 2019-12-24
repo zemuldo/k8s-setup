@@ -10,4 +10,4 @@ kubectl create -f metal-lb/v0.8.3/manifest.yml
 
 kubectl create -f metal-lb/configmap.yml
 
-./storageos/install.sh
+
