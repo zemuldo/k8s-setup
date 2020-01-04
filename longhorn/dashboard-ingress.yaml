@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: longhorn-ingress
+  namespace: longhorn-system
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: basic-auth
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - longhorn-dashboard'
+spec:
+  tls:
+  - hosts:
+    - longhorn.zemuldo.com
+    secretName: longhorn-tls
+  rules:
+  - host: longhorn.zemuldo.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: longhorn-frontend
+          servicePort: 80
