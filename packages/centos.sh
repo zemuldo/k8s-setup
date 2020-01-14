@@ -26,4 +26,12 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 exclude=kube*
 EOF
  
-sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes 
+sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+setenforce 0
+
+sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+
+systemctl enable firewalld
+
+sudo systemctl stop firewalld
