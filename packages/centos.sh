@@ -1,3 +1,20 @@
+sudo swapoff -a
+
+sudo yum remove -y docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum install docker-ce docker-ce-cli containerd.io --nobest -y
+
 sudo cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -8,20 +25,7 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 exclude=kube*
 EOF
-
-# Turn off the swap: Required for Kubernetes to work
-sudo swapoff -a
-
-sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-
-sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
-
-dnf list docker-ce --showduplicates | sort -r
-
-sudo dnf install -y docker-ce-3:18.09.1-3.el7
  
 sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes 
- 
-sudo systemctl enable --now docker
- 
-sudo systemctl enable --now kubelet
+
+https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/
