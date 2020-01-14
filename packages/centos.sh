@@ -27,5 +27,3 @@ exclude=kube*
 EOF
  
 sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes 
-
-https://www.linuxtechi.com/install-docker-ce-centos-8-rhel-8/
