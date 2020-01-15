@@ -4,6 +4,8 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
+kubectl create -f etcd/manifest.yml
+
 kubectl create -f calico/v3.10/manifest.yml
 
 kubectl create -f metal-lb/v0.8.3/manifest.yml
