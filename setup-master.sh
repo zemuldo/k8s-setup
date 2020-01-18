@@ -48,7 +48,7 @@ if [ -n "$LB_ADDRESS_RANGE" ]
   kubectl create -f metal-lb/v0.8.3/manifest.yml
 
   echo "${BLUE}Setting up MetalLB address Range ${NC}"
-  
+
   kubectl create -f - <<END
   apiVersion: v1
   kind: ConfigMap
@@ -67,5 +67,3 @@ else
   echo "${ORANGE}Skipped LB Installation ${NC}"
   exit 1
 fi
-
-
