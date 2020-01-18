@@ -41,7 +41,7 @@ The dashboard is accessible on the `Master IP` port `8001`. You can bind your lo
 ssh -fNTL localhost:8000:127.0.0.1:8001 iam@master-ip-address
 ```
 
-Now you can access the dashboard on your [[local machine port 8000]()](http://localhost:8000/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=default)
+Now you can access the dashboard on: http://localhost:8000/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=default
 
 ## Storage
 
