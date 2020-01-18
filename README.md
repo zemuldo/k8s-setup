@@ -89,11 +89,23 @@ To access the dashboard, bind your local machine to the master ip port 5705
 ssh -fNTL localhost:5700:127.0.0.1:5705 iam@MASTER-IP-ADDRESS
 ```
 
-The access http://localhost:5700/#/volumes
+The access http://localhost:5700/
 
 ## Nginx Ingress Controller
 
+To setup Nginx Ingress Controller.
 
+```shell
+./setup-nginx-ingress-ctl.sh
+```
+
+## Cert-Manager
+
+To setup cert manager.
+
+```shell
+./setup-cert-manager.sh
+```
 
 ## Kube-Prometheus
 
