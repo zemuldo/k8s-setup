@@ -1,6 +1,6 @@
 # k8s-setup
 
-A setup of Bare Metal Kubernetes using Kubeadm and Metallb on Ubuntu 18.04 master and 3 Ubuntu 18.04 minions.
+Code for my post on [Bare-Metal Kubernetes Setup](https://zemuldo.com/blog/kubernetes-on-a-bare-metal-setup.-5e0473b928ad7a001974455b), a setup of Bare Metal Kubernetes using Kubeadm and Metallb on Ubuntu 18.04 master and 3 Ubuntu 18.04 minions.
 
 ## Setup Master
 
