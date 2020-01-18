@@ -24,7 +24,7 @@ Example
 ## Dashboard
 
 ```shell
-./setup-dashboard
+./setup-dashboard.sh
 ```
 
 This will setup the Kubernetes UI Dashboard and a service account `k8s-admin`.
