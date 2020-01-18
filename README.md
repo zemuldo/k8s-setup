@@ -21,6 +21,10 @@ Example
 ./setup-master.sh 192.168.122.0/24 192.168.122.150-192.168.122.250
 ```
 
+## Setup Nodes
+
+Just join the nodes using the token generated in the previous master setup script.
+
 ## Dashboard
 
 ```shell
