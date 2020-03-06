@@ -6,4 +6,4 @@ kubectl create -f storageos/storageos-oparator-cluster.yaml
 
 kubectl create -f storageos/storageclass.yaml
 
-kubectl patch storageclass fast -p '{"metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+kubectl patch storageclass storageos -p '{"metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'

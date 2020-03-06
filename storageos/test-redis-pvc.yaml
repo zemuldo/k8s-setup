@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: fast-redis-pvc
+  name: storageos-redis-pvc
 spec:
-  storageClassName: fast
+  storageClassName: storageos
   accessModes:
     - ReadWriteOnce
   resources:
