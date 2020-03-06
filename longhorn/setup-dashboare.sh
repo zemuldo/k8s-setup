@@ -1,6 +1,6 @@
 sudo apt-get install apache2-utils
 
-htpasswd -c auth username
+htpasswd -c auth zemuldo
 
 kubectl create secret generic basic-auth --from-file=auth -n longhorn-system
 
