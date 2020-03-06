@@ -23,4 +23,4 @@ spec:
   volumes:
     - name: redis-data
       persistentVolumeClaim:
-        claimName: storageos-redis-pvc
+        claimName: fast-redis-pvc

@@ -1,8 +1,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: storageos
-  namespace: storageos-operator
+  name: fast
 provisioner: kubernetes.io/storageos
 parameters:
   pool: default
