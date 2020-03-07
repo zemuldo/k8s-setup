@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: storageos-redis-pvc
 spec:
-  storageClassName: storageos
+  storageClassName: fast
   accessModes:
     - ReadWriteOnce
   resources:
