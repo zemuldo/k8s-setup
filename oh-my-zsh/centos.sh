@@ -9,7 +9,8 @@ sudo yum -y install zsh git util-linux-user
 echo "Setting up powerline fonts"
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts ./install.sh
-mkdir /usr/share/fonts cp /root/.local/share/fonts/* /usr/share/fonts
+sudo mkdir /usr/share/fonts
+sudo cp /root/.local/share/fonts/* /usr/share/fonts
 
 echo "Cloning oh-my-zsh"
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
